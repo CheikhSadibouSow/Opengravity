@@ -6,10 +6,8 @@ import { transcribeAudio } from '../agent/voice.js';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-import { stream, Readable } from 'node:stream';
-import { promisify } from 'node:util';
-
-const pipeline = promisify(stream.pipeline);
+import { Readable } from 'node:stream';
+import { pipeline } from 'node:stream/promises';
 
 async function downloadFileContent(filePath: string, destPath: string) {
   const url = `https://api.telegram.org/file/bot${env.TELEGRAM_BOT_TOKEN}/${filePath}`;
