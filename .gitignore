@@ -1,0 +1,6 @@
+node_modules/
+.env
+service-account.json
+memory.db
+agent-log.txt
+dist/

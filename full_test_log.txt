@@ -1,0 +1,1032 @@
+﻿[dotenv@17.3.1] injecting env (7) from .env -- tip: ÔÜÖ´©Å  override existing env vars with { override: true }
+Ô£à Firebase Admin initialis├® avec service-account.json
+NETTOYAGE FIREBASE POUR LE TEST...
+TESTING 'bonsoir'...
+node.exe : ERREUR CLEAR 
+HISTORY (FIRESTORE): Error: 
+7 PERMISSION_DENIED: Cloud 
+Firestore API has not been 
+used in project 
+opengravity-5b380 before or 
+it is disabled. Enable it by 
+visiting https://console.deve
+lopers.google.com/apis/api/fi
+restore.googleapis.com/overvi
+ew?project=opengravity-5b380 
+then retry. If you enabled 
+this API recently, wait a 
+few minutes for the action 
+to propagate to our systems 
+and retry.
+Au caractère Ligne:1 : 1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (ERREUR   
+  CLEAR HI...tems and retr   
+ y.:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+    at callErrorFromStatus 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\call.t
+s:84:17)
+    at 
+Object.onReceiveStatus 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\client
+.ts:612:51)
+    at 
+Object.onReceiveStatus 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\client
+-interceptors.ts:424:48)
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\resolv
+ing-call.ts:170:24)
+    at process.processTicksAn
+dRejections (node:internal/pr
+ocess/task_queues:84:11)
+for call at
+    at ServiceClientImpl.make
+ServerStreamRequest 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\client
+.ts:595:42)
+    at ServiceClientImpl.<ano
+nymous> (C:\Users\Dieu  Merci
+\OneDrive\Bureau\opengravity\
+node_modules\@grpc\grpc-js\sr
+c\make-client.ts:189:15)
+    at C:\Users\Dieu  Merci\O
+neDrive\Bureau\opengravity\no
+de_modules\@google-cloud\fire
+store\build\src\v1\firestore_
+client.js:242:33
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streamingApiCaller.ts:5
+9:19)
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\normalCal
+ls\timeout.ts:54:13)
+    at Object.request 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streaming.ts:331:28)
+    at makeRequest 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\retry-request\index.js:1
+59:28)
+    at retryRequest 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\retry-request\index.js:1
+19:5)
+    at StreamProxy.setStream 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streaming.ts:322:29)
+    at 
+StreamingApiCaller.call 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streamingApiCaller.ts:8
+9:12)
+Caused by: Error
+    at 
+QueryUtil._getResponse 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@google-cloud\firestore\
+build\src\reference\query-uti
+l.js:44:23)
+    at CollectionReference._g
+etResponse (C:\Users\Dieu  Me
+rci\OneDrive\Bureau\opengravi
+ty\node_modules\@google-cloud
+\firestore\build\src\referenc
+e\query.js:784:32)
+    at 
+CollectionReference._get 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@google-cloud\firestore\
+build\src\reference\query.js:
+777:35)
+    at C:\Users\Dieu  Merci\O
+neDrive\Bureau\opengravity\no
+de_modules\@google-cloud\fire
+store\build\src\reference\que
+ry.js:745:43
+    at C:\Users\Dieu  Merci\O
+neDrive\Bureau\opengravity\no
+de_modules\@google-cloud\fire
+store\build\src\telemetry\ena
+bled-trace-util.js:110:30
+    at 
+NoopContextManager.with 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\c
+ontext\NoopContextManager.ts:
+31:15)
+    at ContextAPI.with 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\a
+pi\context.ts:77:42)
+    at 
+NoopTracer.startActiveSpan 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\t
+race\NoopTracer.ts:98:27)
+    at 
+ProxyTracer.startActiveSpan 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\t
+race\ProxyTracer.ts:51:20)
+    at EnabledTraceUtil.start
+ActiveSpan (C:\Users\Dieu  Me
+rci\OneDrive\Bureau\opengravi
+ty\node_modules\@google-cloud
+\firestore\build\src\telemetr
+y\enabled-trace-util.js:102:2
+8) {
+  code: 7,
+  details: 'Cloud Firestore 
+API has not been used in 
+project opengravity-5b380 
+before or it is disabled. 
+Enable it by visiting https:/
+/console.developers.google.co
+m/apis/api/firestore.googleap
+is.com/overview?project=openg
+ravity-5b380 then retry. If 
+you enabled this API 
+recently, wait a few minutes 
+for the action to propagate 
+to our systems and retry.',
+  metadata: Metadata {
+    internalRepr: Map(5) {
+      
+'google.rpc.errorinfo-bin' 
+=> [Array],
+      'google.rpc.help-bin' 
+=> [Array],
+      'google.rpc.localizedme
+ssage-bin' => [Array],
+      
+'grpc-status-details-bin' => 
+[Array],
+      'x-debug-tracking-id' 
+=> [Array]
+    },
+    opaqueData: Map(0) {},
+    options: {}
+  },
+  statusDetails: [
+    ErrorInfo {
+      metadata: [Object],
+      reason: 
+'SERVICE_DISABLED',
+      domain: 
+'googleapis.com'
+    },
+    LocalizedMessage {
+      locale: 'en-US',
+      message: 'Cloud 
+Firestore API has not been 
+used in project 
+opengravity-5b380 before or 
+it is disabled. Enable it by 
+visiting https://console.deve
+lopers.google.com/apis/api/fi
+restore.googleapis.com/overvi
+ew?project=opengravity-5b380 
+then retry. If you enabled 
+this API recently, wait a 
+few minutes for the action 
+to propagate to our systems 
+and retry.'
+    },
+    Help { links: [Array] }
+  ],
+  reason: 'SERVICE_DISABLED',
+  domain: 'googleapis.com',
+  errorInfoMetadata: {
+    serviceTitle: 'Cloud 
+Firestore API',
+    consumer: 
+'projects/opengravity-5b380',
+    activationUrl: 'https://c
+onsole.developers.google.com/
+apis/api/firestore.googleapis
+.com/overview?project=opengra
+vity-5b380',
+    service: 
+'firestore.googleapis.com',
+    containerInfo: 
+'opengravity-5b380'
+  }
+}
+[AGENT] D├®but r├®cup├®ration historique pour 123456789...
+ERREUR GET HISTORY 
+(FIRESTORE): Error: 7 
+PERMISSION_DENIED: Cloud 
+Firestore API has not been 
+used in project 
+opengravity-5b380 before or 
+it is disabled. Enable it by 
+visiting https://console.deve
+lopers.google.com/apis/api/fi
+restore.googleapis.com/overvi
+ew?project=opengravity-5b380 
+then retry. If you enabled 
+this API recently, wait a 
+few minutes for the action 
+to propagate to our systems 
+and retry.
+Ô£à Historique Firestore r├®cup├®r├® : 0 messages.
+    at callErrorFromStatus 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\call.t
+s:84:17)
+    at 
+Object.onReceiveStatus 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\client
+.ts:612:51)
+    at 
+Object.onReceiveStatus 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\client
+-interceptors.ts:424:48)
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\resolv
+ing-call.ts:170:24)
+    at process.processTicksAn
+dRejections (node:internal/pr
+ocess/task_queues:84:11)
+for call at
+    at ServiceClientImpl.make
+ServerStreamRequest 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\client
+.ts:595:42)
+    at ServiceClientImpl.<ano
+nymous> (C:\Users\Dieu  Merci
+\OneDrive\Bureau\opengravity\
+node_modules\@grpc\grpc-js\sr
+c\make-client.ts:189:15)
+    at C:\Users\Dieu  Merci\O
+neDrive\Bureau\opengravity\no
+de_modules\@google-cloud\fire
+store\build\src\v1\firestore_
+client.js:242:33
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streamingApiCaller.ts:5
+9:19)
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\normalCal
+ls\timeout.ts:54:13)
+    at Object.request 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streaming.ts:331:28)
+    at makeRequest 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\retry-request\index.js:1
+59:28)
+    at retryRequest 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\retry-request\index.js:1
+19:5)
+    at StreamProxy.setStream 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streaming.ts:322:29)
+    at 
+StreamingApiCaller.call 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streamingApiCaller.ts:8
+9:12)
+Caused by: Error
+    at 
+QueryUtil._getResponse 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@google-cloud\firestore\
+build\src\reference\query-uti
+l.js:44:23)
+    at Query._getResponse 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@google-cloud\firestore\
+build\src\reference\query.js:
+784:32)
+    at Query._get 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@google-cloud\firestore\
+build\src\reference\query.js:
+777:35)
+    at C:\Users\Dieu  Merci\O
+neDrive\Bureau\opengravity\no
+de_modules\@google-cloud\fire
+store\build\src\reference\que
+ry.js:745:43
+    at C:\Users\Dieu  Merci\O
+neDrive\Bureau\opengravity\no
+de_modules\@google-cloud\fire
+store\build\src\telemetry\ena
+bled-trace-util.js:110:30
+    at 
+NoopContextManager.with 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\c
+ontext\NoopContextManager.ts:
+31:15)
+    at ContextAPI.with 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\a
+pi\context.ts:77:42)
+    at 
+NoopTracer.startActiveSpan 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\t
+race\NoopTracer.ts:98:27)
+    at 
+ProxyTracer.startActiveSpan 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\t
+race\ProxyTracer.ts:51:20)
+    at EnabledTraceUtil.start
+ActiveSpan (C:\Users\Dieu  Me
+rci\OneDrive\Bureau\opengravi
+ty\node_modules\@google-cloud
+\firestore\build\src\telemetr
+y\enabled-trace-util.js:102:2
+8) {
+  code: 7,
+[AGENT] Appel (meta-llama/llama-3.1-8b-instruct:free) avec 1 messages.
+  details: 'Cloud Firestore 
+API has not been used in 
+project opengravity-5b380 
+before or it is disabled. 
+Enable it by visiting https:/
+/console.developers.google.co
+m/apis/api/firestore.googleap
+is.com/overview?project=openg
+ravity-5b380 then retry. If 
+you enabled this API 
+recently, wait a few minutes 
+for the action to propagate 
+to our systems and retry.',
+  metadata: Metadata {
+    internalRepr: Map(5) {
+      
+'google.rpc.errorinfo-bin' 
+=> [Array],
+      'google.rpc.help-bin' 
+=> [Array],
+      'google.rpc.localizedme
+ssage-bin' => [Array],
+      
+'grpc-status-details-bin' => 
+[Array],
+      'x-debug-tracking-id' 
+=> [Array]
+    },
+    opaqueData: Map(0) {},
+    options: {}
+  },
+  statusDetails: [
+    ErrorInfo {
+      metadata: [Object],
+      reason: 
+'SERVICE_DISABLED',
+      domain: 
+'googleapis.com'
+    },
+    LocalizedMessage {
+      locale: 'en-US',
+      message: 'Cloud 
+Firestore API has not been 
+used in project 
+opengravity-5b380 before or 
+it is disabled. Enable it by 
+visiting https://console.deve
+lopers.google.com/apis/api/fi
+restore.googleapis.com/overvi
+ew?project=opengravity-5b380 
+then retry. If you enabled 
+this API recently, wait a 
+few minutes for the action 
+to propagate to our systems 
+and retry.'
+    },
+    Help { links: [Array] }
+  ],
+  reason: 'SERVICE_DISABLED',
+  domain: 'googleapis.com',
+  errorInfoMetadata: {
+    activationUrl: 'https://c
+onsole.developers.google.com/
+apis/api/firestore.googleapis
+.com/overview?project=opengra
+vity-5b380',
+    serviceTitle: 'Cloud 
+Firestore API',
+    service: 
+'firestore.googleapis.com',
+    consumer: 
+'projects/opengravity-5b380',
+    containerInfo: 
+'opengravity-5b380'
+  }
+}
+ERREUR CRITIQUE AGENT: 
+APICallError 
+[AI_APICallError]: No 
+endpoints found for meta-llam
+a/llama-3.1-8b-instruct:free.
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@ai-sdk\provider-utils\s
+rc\response-handler.ts:56:16)
+    at process.processTicksAn
+dRejections (node:internal/pr
+ocess/task_queues:103:5)
+    at async postToApi 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@ai-sdk\provider-utils\s
+rc\post-to-api.ts:118:28)
+    at async OpenAIChatLangua
+geModel.doGenerate 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@ai-sdk\openai\src\chat\
+openai-chat-language-model.ts
+:325:9)
+    at async fn 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\generate-text\gen
+erate-text.ts:810:34)
+    at async <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\telemetry\record-
+span.ts:32:24)
+    at async 
+_retryWithExponentialBackoff 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\util\retry-with-e
+xponential-backoff.ts:96:12)
+    at async fn 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\generate-text\gen
+erate-text.ts:765:36)
+    at async <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\telemetry\record-
+span.ts:32:24)
+    at async generateText 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\generate-text\gen
+erate-text.ts:527:12) {
+  cause: undefined,
+  url: 'https://openrouter.ai
+/api/v1/chat/completions',
+  requestBodyValues: {
+    model: 'meta-llama/llama-
+3.1-8b-instruct:free',
+    logit_bias: undefined,
+    logprobs: undefined,
+    top_logprobs: undefined,
+    user: undefined,
+    parallel_tool_calls: 
+undefined,
+    max_tokens: undefined,
+    temperature: undefined,
+    top_p: undefined,
+    frequency_penalty: 
+undefined,
+    presence_penalty: 
+undefined,
+    response_format: 
+undefined,
+    stop: undefined,
+    seed: undefined,
+    verbosity: undefined,
+    max_completion_tokens: 
+undefined,
+    store: undefined,
+    metadata: undefined,
+    prediction: undefined,
+    reasoning_effort: 
+undefined,
+    service_tier: undefined,
+    prompt_cache_key: 
+undefined,
+    prompt_cache_retention: 
+undefined,
+    safety_identifier: 
+undefined,
+    messages: [ [Object], 
+[Object] ],
+    tools: [ [Object] ],
+    tool_choice: 'auto'
+  },
+  statusCode: 404,
+  responseHeaders: {
+    'access-control-allow-ori
+gin': '*',
+    'cf-ray': 
+'9dfa6509ca4ede3e-DKR',
+    connection: 'keep-alive',
+    'content-encoding': 
+'gzip',
+    'content-type': 
+'application/json',
+    date: 'Sat, 21 Mar 2026 
+05:00:44 GMT',
+    'permissions-policy': 
+'payment=(self "https://check
+out.stripe.com" "https://conn
+ect-js.stripe.com" 
+"https://js.stripe.com" 
+"https://*.js.stripe.com" 
+"https://hooks.stripe.com")',
+    'referrer-policy': 
+'no-referrer, strict-origin-w
+hen-cross-origin',
+    server: 'cloudflare',
+    'transfer-encoding': 
+'chunked',
+    
+'x-content-type-options': 
+'nosniff'
+  },
+  responseBody: 
+'{"error":{"message":"No 
+endpoints found for meta-llam
+a/llama-3.1-8b-instruct:free.
+","code":404},"user_id":"user
+_3BDTTUBd7x1RW1awVwg7wxvUigS"
+}',
+  isRetryable: false,
+  data: {
+    error: {
+      message: 'No endpoints 
+found for meta-llama/llama-3.
+1-8b-instruct:free.',
+      code: 404
+    }
+  },
+  Symbol(vercel.ai.error): 
+true,
+  Symbol(vercel.ai.error.AI_A
+PICallError): true
+}
+REPLY 1: D├®sol├®, une erreur technique est survenue.
+TESTING 'quelle heure est-il ?'...
+[AGENT] D├®but r├®cup├®ration historique pour 123456789...
+ERREUR GET HISTORY 
+(FIRESTORE): Error: 7 
+PERMISSION_DENIED: Cloud 
+Firestore API has not been 
+used in project 
+opengravity-5b380 before or 
+it is disabled. Enable it by 
+visiting https://console.deve
+lopers.google.com/apis/api/fi
+restore.googleapis.com/overvi
+ew?project=opengravity-5b380 
+then retry. If you enabled 
+this API recently, wait a 
+few minutes for the action 
+to propagate to our systems 
+and retry.
+    at callErrorFromStatus 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\call.t
+s:84:17)
+    at 
+Object.onReceiveStatus 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\client
+.ts:612:51)
+    at 
+Object.onReceiveStatus 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\client
+-interceptors.ts:424:48)
+Ô£à Historique Firestore r├®cup├®r├® : 0 messages.
+[AGENT] Appel (meta-llama/llama-3.1-8b-instruct:free) avec 1 messages.
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\resolv
+ing-call.ts:170:24)
+    at process.processTicksAn
+dRejections (node:internal/pr
+ocess/task_queues:84:11)
+for call at
+    at ServiceClientImpl.make
+ServerStreamRequest 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@grpc\grpc-js\src\client
+.ts:595:42)
+    at ServiceClientImpl.<ano
+nymous> (C:\Users\Dieu  Merci
+\OneDrive\Bureau\opengravity\
+node_modules\@grpc\grpc-js\sr
+c\make-client.ts:189:15)
+    at C:\Users\Dieu  Merci\O
+neDrive\Bureau\opengravity\no
+de_modules\@google-cloud\fire
+store\build\src\v1\firestore_
+client.js:242:33
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streamingApiCaller.ts:5
+9:19)
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\normalCal
+ls\timeout.ts:54:13)
+    at Object.request 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streaming.ts:331:28)
+    at makeRequest 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\retry-request\index.js:1
+59:28)
+    at retryRequest 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\retry-request\index.js:1
+19:5)
+    at StreamProxy.setStream 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streaming.ts:322:29)
+    at 
+StreamingApiCaller.call 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\google-gax\src\streaming
+Calls\streamingApiCaller.ts:8
+9:12)
+Caused by: Error
+    at 
+QueryUtil._getResponse 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@google-cloud\firestore\
+build\src\reference\query-uti
+l.js:44:23)
+    at Query._getResponse 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@google-cloud\firestore\
+build\src\reference\query.js:
+784:32)
+    at Query._get 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@google-cloud\firestore\
+build\src\reference\query.js:
+777:35)
+    at C:\Users\Dieu  Merci\O
+neDrive\Bureau\opengravity\no
+de_modules\@google-cloud\fire
+store\build\src\reference\que
+ry.js:745:43
+    at C:\Users\Dieu  Merci\O
+neDrive\Bureau\opengravity\no
+de_modules\@google-cloud\fire
+store\build\src\telemetry\ena
+bled-trace-util.js:110:30
+    at 
+NoopContextManager.with 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\c
+ontext\NoopContextManager.ts:
+31:15)
+    at ContextAPI.with 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\a
+pi\context.ts:77:42)
+    at 
+NoopTracer.startActiveSpan 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\t
+race\NoopTracer.ts:98:27)
+    at 
+ProxyTracer.startActiveSpan 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@opentelemetry\api\src\t
+race\ProxyTracer.ts:51:20)
+    at EnabledTraceUtil.start
+ActiveSpan (C:\Users\Dieu  Me
+rci\OneDrive\Bureau\opengravi
+ty\node_modules\@google-cloud
+\firestore\build\src\telemetr
+y\enabled-trace-util.js:102:2
+8) {
+  code: 7,
+  details: 'Cloud Firestore 
+API has not been used in 
+project opengravity-5b380 
+before or it is disabled. 
+Enable it by visiting https:/
+/console.developers.google.co
+m/apis/api/firestore.googleap
+is.com/overview?project=openg
+ravity-5b380 then retry. If 
+you enabled this API 
+recently, wait a few minutes 
+for the action to propagate 
+to our systems and retry.',
+  metadata: Metadata {
+    internalRepr: Map(5) {
+      
+'google.rpc.errorinfo-bin' 
+=> [Array],
+      'google.rpc.help-bin' 
+=> [Array],
+      'google.rpc.localizedme
+ssage-bin' => [Array],
+      
+'grpc-status-details-bin' => 
+[Array],
+      'x-debug-tracking-id' 
+=> [Array]
+    },
+    opaqueData: Map(0) {},
+    options: {}
+  },
+  statusDetails: [
+    ErrorInfo {
+      metadata: [Object],
+      reason: 
+'SERVICE_DISABLED',
+      domain: 
+'googleapis.com'
+    },
+    LocalizedMessage {
+      locale: 'en-US',
+      message: 'Cloud 
+Firestore API has not been 
+used in project 
+opengravity-5b380 before or 
+it is disabled. Enable it by 
+visiting https://console.deve
+lopers.google.com/apis/api/fi
+restore.googleapis.com/overvi
+ew?project=opengravity-5b380 
+then retry. If you enabled 
+this API recently, wait a 
+few minutes for the action 
+to propagate to our systems 
+and retry.'
+    },
+    Help { links: [Array] }
+  ],
+  reason: 'SERVICE_DISABLED',
+  domain: 'googleapis.com',
+  errorInfoMetadata: {
+    consumer: 
+'projects/opengravity-5b380',
+    containerInfo: 
+'opengravity-5b380',
+    serviceTitle: 'Cloud 
+Firestore API',
+    activationUrl: 'https://c
+onsole.developers.google.com/
+apis/api/firestore.googleapis
+.com/overview?project=opengra
+vity-5b380',
+    service: 
+'firestore.googleapis.com'
+  }
+}
+ERREUR CRITIQUE AGENT: 
+APICallError 
+[AI_APICallError]: No 
+endpoints found for meta-llam
+a/llama-3.1-8b-instruct:free.
+    at <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@ai-sdk\provider-utils\s
+rc\response-handler.ts:56:16)
+    at process.processTicksAn
+dRejections (node:internal/pr
+ocess/task_queues:103:5)
+    at async postToApi 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@ai-sdk\provider-utils\s
+rc\post-to-api.ts:118:28)
+    at async OpenAIChatLangua
+geModel.doGenerate 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\@ai-sdk\openai\src\chat\
+openai-chat-language-model.ts
+:325:9)
+    at async fn 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\generate-text\gen
+erate-text.ts:810:34)
+    at async <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\telemetry\record-
+span.ts:32:24)
+    at async 
+_retryWithExponentialBackoff 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\util\retry-with-e
+xponential-backoff.ts:96:12)
+    at async fn 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\generate-text\gen
+erate-text.ts:765:36)
+    at async <anonymous> 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\telemetry\record-
+span.ts:32:24)
+    at async generateText 
+(C:\Users\Dieu  Merci\OneDriv
+e\Bureau\opengravity\node_mod
+ules\ai\src\generate-text\gen
+erate-text.ts:527:12) {
+  cause: undefined,
+  url: 'https://openrouter.ai
+/api/v1/chat/completions',
+  requestBodyValues: {
+    model: 'meta-llama/llama-
+3.1-8b-instruct:free',
+    logit_bias: undefined,
+    logprobs: undefined,
+    top_logprobs: undefined,
+    user: undefined,
+    parallel_tool_calls: 
+undefined,
+    max_tokens: undefined,
+    temperature: undefined,
+    top_p: undefined,
+    frequency_penalty: 
+undefined,
+    presence_penalty: 
+undefined,
+    response_format: 
+undefined,
+    stop: undefined,
+    seed: undefined,
+    verbosity: undefined,
+    max_completion_tokens: 
+undefined,
+    store: undefined,
+    metadata: undefined,
+    prediction: undefined,
+    reasoning_effort: 
+undefined,
+    service_tier: undefined,
+    prompt_cache_key: 
+undefined,
+    prompt_cache_retention: 
+undefined,
+    safety_identifier: 
+undefined,
+    messages: [ [Object], 
+[Object] ],
+    tools: [ [Object] ],
+    tool_choice: 'auto'
+  },
+  statusCode: 404,
+  responseHeaders: {
+    'access-control-allow-ori
+gin': '*',
+    'cf-ray': 
+'9dfa650cfc27de3e-DKR',
+    connection: 'keep-alive',
+    'content-encoding': 
+'gzip',
+    'content-type': 
+'application/json',
+    date: 'Sat, 21 Mar 2026 
+05:00:44 GMT',
+    'permissions-policy': 
+'payment=(self "https://check
+out.stripe.com" "https://conn
+ect-js.stripe.com" 
+"https://js.stripe.com" 
+"https://*.js.stripe.com" 
+"https://hooks.stripe.com")',
+    'referrer-policy': 
+'no-referrer, strict-origin-w
+hen-cross-origin',
+    server: 'cloudflare',
+    'transfer-encoding': 
+'chunked',
+    
+'x-content-type-options': 
+'nosniff'
+  },
+  responseBody: 
+'{"error":{"message":"No 
+endpoints found for meta-llam
+a/llama-3.1-8b-instruct:free.
+","code":404},"user_id":"user
+_3BDTTUBd7x1RW1awVwg7wxvUigS"
+}',
+  isRetryable: false,
+  data: {
+    error: {
+      message: 'No endpoints 
+found for meta-llama/llama-3.
+1-8b-instruct:free.',
+      code: 404
+    }
+  },
+  Symbol(vercel.ai.error): 
+true,
+  Symbol(vercel.ai.error.AI_A
+PICallError): true
+}
+REPLY 2: D├®sol├®, une erreur technique est survenue.
