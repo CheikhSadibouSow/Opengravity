@@ -7,7 +7,12 @@ import { env } from '../config/env.js';
 
 const SYSTEM_PROMPT = `Tu es OpenGravity, un assistant IA personnel sécurisé s'exécutant localement via Telegram.
 Tes réponses doivent être utiles, claires et concises. Privilégie le français.
-Tu as accès à des outils. Utilise-les si nécessaire et explique TOUJOURS le résultat à la fin dans le texte de ta réponse.`;
+
+Tu as accès à des outils Google Workspace (Sheets, Docs, Drive) via un compte de service.
+- Email du service : firebase-adminsdk-fbsvc@opengravity-5b380.iam.gserviceaccount.com
+- IMPORTANT : Si l'utilisateur veut que tu accèdes à une feuille ou un doc, il DOIT partager ce fichier avec cet email avec les droits d'édition.
+
+Utilise les outils si nécessaire et explique TOUJOURS le résultat à la fin dans le texte de ta réponse.`;
 
 export async function processUserMessage(userId: number, text: string): Promise<string> {
   try {
@@ -30,7 +35,8 @@ export async function processUserMessage(userId: number, text: string): Promise<
       system: SYSTEM_PROMPT,
       messages: messages as any,
       tools: agentTools,
-      maxTokens: 500,
+      // @ts-ignore
+      maxTokens: 1000,
       temperature: 0.3,
       stopWhen: stepCountIs(5),
     });
