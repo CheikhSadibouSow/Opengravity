@@ -20,6 +20,8 @@ Go to the **Environment** tab in Render and add the following keys from your `.e
 - `GROQ_API_KEY`
 - `OPENROUTER_API_KEY` (if used)
 - `FIREBASE_SERVICE_ACCOUNT_JSON` -> **Copy-paste the entire content of your `service-account.json` here.**
+- `GMAIL_USER` -> Votre adresse Gmail personnelle (ex: `nom@gmail.com`).
+- `GMAIL_APP_PASSWORD` -> Le code de 16 caractères généré chez Google.
 
 ## 4. Keeping it alive (Free Tier)
 Since the Render free tier sleeps after 15 mins of inactivity, use a free service like [cron-job.org](https://cron-job.org) to ping your Render URL `https://your-app-name.onrender.com` every 10 minutes.

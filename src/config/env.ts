@@ -12,6 +12,8 @@ const envSchema = z.object({
   GROQ_API_KEY: z.string().min(1, "Groq API key is required"),
   OPENROUTER_API_KEY: z.string().optional(),
   OPENROUTER_MODEL: z.string().default("meta-llama/llama-3.1-8b-instruct:free"),
+  GMAIL_USER: z.string().email().optional(),
+  GMAIL_APP_PASSWORD: z.string().optional(),
   DB_PATH: z.string().default("./memory.db"),
   GOOGLE_APPLICATION_CREDENTIALS: z.string().optional(),
   FIREBASE_SERVICE_ACCOUNT_JSON: z.string().optional(),
