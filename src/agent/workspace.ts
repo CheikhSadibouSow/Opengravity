@@ -6,19 +6,31 @@ import path from 'path';
 const SERVICE_ACCOUNT_PATH = path.resolve(process.cwd(), 'service-account.json');
 
 function getAuth() {
-  if (!fs.existsSync(SERVICE_ACCOUNT_PATH)) {
-    throw new Error("Fichier service-account.json manquant pour Google Workspace.");
+  const envJson = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+  
+  const scopes = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/documents',
+    'https://www.googleapis.com/auth/calendar.events',
+    'https://www.googleapis.com/auth/drive.file'
+  ];
+
+  if (envJson) {
+    const credentials = JSON.parse(envJson);
+    return new google.auth.GoogleAuth({
+      credentials,
+      scopes,
+    });
+  }
+
+  if (fs.existsSync(SERVICE_ACCOUNT_PATH)) {
+    return new google.auth.GoogleAuth({
+      keyFile: SERVICE_ACCOUNT_PATH,
+      scopes,
+    });
   }
   
-  return new google.auth.GoogleAuth({
-    keyFile: SERVICE_ACCOUNT_PATH,
-    scopes: [
-      'https://www.googleapis.com/auth/spreadsheets',
-      'https://www.googleapis.com/auth/documents',
-      'https://www.googleapis.com/auth/calendar.events',
-      'https://www.googleapis.com/auth/drive.file'
-    ],
-  });
+  throw new Error("Authentification Google Workspace manquante (ni fichier ni variable d'environnement).");
 }
 
 /**
