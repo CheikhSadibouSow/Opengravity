@@ -1,6 +1,6 @@
 import { tool } from 'ai';
 import { z } from 'zod';
-import { readSheet, appendSheet, createDoc } from './workspace.js';
+import { readSheet, appendSheet, createDoc, listCalendarEvents, createCalendarEvent, listGmailMessages, sendGmailMessage } from './workspace.js';
 
 export const getCurrentTime = tool({
   description: 'Obtient l\'heure locale exacte actuelle. Utile pour répondre aux questions sur le temps, la date et l\'heure.',
@@ -49,9 +49,53 @@ export const createGoogleDoc = tool({
   },
 });
 
+export const listGoogleCalendarEvents = tool({
+  description: 'Liste les 10 prochains événements du calendrier Google de l\'utilisateur.',
+  parameters: z.object({}),
+  execute: async () => {
+    return await listCalendarEvents();
+  },
+});
+
+export const createGoogleCalendarEvent = tool({
+  description: 'Crée un nouvel événement dans le calendrier Google.',
+  parameters: z.object({
+    summary: z.string().describe('Le titre de l\'événement'),
+    startTime: z.string().describe('Heure de début au format ISO (ex: 2026-04-03T10:00:00Z)'),
+    endTime: z.string().describe('Heure de fin au format ISO'),
+  }),
+  execute: async ({ summary, startTime, endTime }: { summary: string, startTime: string, endTime: string }) => {
+    return await createCalendarEvent(summary, startTime, endTime);
+  },
+});
+
+export const listGmailInbox = tool({
+  description: 'Liste les 5 derniers messages reçus dans Gmail (nécessite délégation).',
+  parameters: z.object({}),
+  execute: async () => {
+    return await listGmailMessages();
+  },
+});
+
+export const sendGmailEmail = tool({
+  description: 'Envoie un email via Gmail (nécessite délégation).',
+  parameters: z.object({
+    to: z.string().describe('Destinataire'),
+    subject: z.string().describe('Sujet de l\'email'),
+    body: z.string().describe('Corps de l\'email (HTML possible)'),
+  }),
+  execute: async ({ to, subject, body }: { to: string, subject: string, body: string }) => {
+    return await sendGmailMessage(to, subject, body);
+  },
+});
+
 export const agentTools = {
   get_current_time: getCurrentTime,
   read_google_sheet: readGoogleSheet,
   append_google_sheet: appendGoogleSheet,
   create_google_doc: createGoogleDoc,
+  list_calendar_events: listGoogleCalendarEvents,
+  create_calendar_event: createGoogleCalendarEvent,
+  list_gmail_inbox: listGmailInbox,
+  send_gmail_email: sendGmailEmail,
 };

@@ -67,3 +67,78 @@ export async function createDoc(title: string) {
   });
   return res.data;
 }
+
+/**
+ * Calendar: Liste les événements
+ */
+export async function listCalendarEvents() {
+  const auth = getAuth();
+  const calendar = google.calendar({ version: 'v3', auth });
+  const res = await calendar.events.list({
+    calendarId: 'primary',
+    timeMin: new Date().toISOString(),
+    maxResults: 10,
+    singleEvents: true,
+    orderBy: 'startTime',
+  });
+  return res.data.items;
+}
+
+/**
+ * Calendar: Crée un événement
+ */
+export async function createCalendarEvent(summary: string, startTime: string, endTime: string) {
+  const auth = getAuth();
+  const calendar = google.calendar({ version: 'v3', auth });
+  const res = await calendar.events.insert({
+    calendarId: 'primary',
+    requestBody: {
+      summary,
+      start: { dateTime: startTime },
+      end: { dateTime: endTime },
+    },
+  });
+  return res.data;
+}
+
+/**
+ * Gmail: Liste les messages (Nécessite Délégation)
+ */
+export async function listGmailMessages() {
+  const auth = getAuth();
+  const gmail = google.gmail({ version: 'v1', auth });
+  const res = await gmail.users.messages.list({
+    userId: 'me',
+    maxResults: 5,
+  });
+  return res.data;
+}
+
+/**
+ * Gmail: Envoie un email (Nécessite Délégation)
+ */
+export async function sendGmailMessage(to: string, subject: string, body: string) {
+  const auth = getAuth();
+  const gmail = google.gmail({ version: 'v1', auth });
+  const utf8Subject = `=?utf-8?B?${Buffer.from(subject).toString('base64')}?=`;
+  const messageParts = [
+    `To: ${to}`,
+    'Content-Type: text/html; charset=utf-8',
+    'MIME-Version: 1.0',
+    `Subject: ${utf8Subject}`,
+    '',
+    body,
+  ];
+  const message = messageParts.join('\n');
+  const encodedMessage = Buffer.from(message)
+    .toString('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/, '');
+
+  const res = await gmail.users.messages.send({
+    userId: 'me',
+    requestBody: { raw: encodedMessage },
+  });
+  return res.data;
+}
