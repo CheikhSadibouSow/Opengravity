@@ -19,8 +19,8 @@ async function bootstrap() {
     process.once('SIGINT', () => bot.stop());
     process.once('SIGTERM', () => bot.stop());
 
-    // Activer la surveillance des emails en arrière-plan
-    await startEmailMonitoring(bot);
+    // Activer la surveillance des emails en arrière-plan (sans bloquer le bot)
+    startEmailMonitoring(bot).catch(err => console.error("❌ Erreur au démarrage du moniteur:", err));
 
     await bot.start({
       onStart: (botInfo) => {
