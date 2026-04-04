@@ -17,7 +17,7 @@ export async function startEmailMonitoring(bot: Bot) {
   console.log(`📡 Démarrage du moniteur Gmail pour ${env.GMAIL_USER}...`);
 
   const pollEmails = async () => {
-    // Créer une nouvelle instance à CHAQUE poll pour éviter l'erreur "Can not re-use ImapFlow instance"
+    // Configuration IMAP avec timeouts stricts
     const client = new ImapFlow({
       host: 'imap.gmail.com',
       port: 993,
@@ -26,48 +26,55 @@ export async function startEmailMonitoring(bot: Bot) {
         user: env.GMAIL_USER,
         pass: env.GMAIL_APP_PASSWORD,
       },
-      logger: false
+      logger: false,
+      clientInfo: { name: 'OpenGravity' },
+      greetingTimeout: 10000,
+      connectionTimeout: 10000
     });
 
     try {
-      await client.connect();
-      const lock = await client.getMailboxLock('INBOX');
-      
-      try {
-        const searchCriteria = { unseen: true, since: lastCheckTime };
-        const messages = await client.search(searchCriteria);
+      // Temps limite pour toute l'opération de vérification (max 30s)
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error("Timeout IMAP global")), 30000)
+      );
+
+      const checkTask = (async () => {
+        await client.connect();
+        const lock = await client.getMailboxLock('INBOX');
         
-        for (const messageSeq of messages) {
-          const content = await client.fetchOne(messageSeq, { source: true });
-          const parsed = await simpleParser(content.source);
+        try {
+          const searchCriteria = { unseen: true, since: lastCheckTime };
+          const messages = await client.search(searchCriteria);
           
-          if (!parsed) continue;
+          for (const messageSeq of messages) {
+            const content = await client.fetchOne(messageSeq, { source: true });
+            const parsed = await simpleParser(content.source);
+            if (!parsed) continue;
 
-          const fromText = parsed.from?.text || "Inconnu";
-          const subject = parsed.subject || "(Sans sujet)";
+            const fromText = parsed.from?.text || "Inconnu";
+            const subject = parsed.subject || "(Sans sujet)";
 
-          console.log(`📩 Nouvel email de: ${fromText} - Sujet: ${subject}`);
-
-          for (const userId of env.TELEGRAM_ALLOWED_USER_IDS) {
-            // Utiliser HTML pour éviter les erreurs de parsing Markdown avec les caractères spéciaux < >
-            await bot.api.sendMessage(userId, 
-              `📩 <b>Nouvel Email Important</b>\n\n` +
-              `👤 <b>De :</b> ${fromText.replace(/</g, '&lt;').replace(/>/g, '&gt;')}\n` +
-              `📝 <b>Sujet :</b> ${subject}\n\n` +
-              `🔗 <i>Consultez votre boîte Gmail pour répondre.</i>`,
-              { parse_mode: 'HTML' }
-            );
+            for (const userId of env.TELEGRAM_ALLOWED_USER_IDS) {
+              await bot.api.sendMessage(userId, 
+                `📩 <b>Nouvel Email Important</b>\n\n` +
+                `👤 <b>De :</b> ${fromText.replace(/</g, '&lt;').replace(/>/g, '&gt;')}\n` +
+                `📝 <b>Sujet :</b> ${subject}\n\n` +
+                `🔗 <i>Consultez votre boîte Gmail pour répondre.</i>`,
+                { parse_mode: 'HTML' }
+              ).catch(e => console.error("Erreur Telegram Send:", e));
+            }
           }
+          lastCheckTime = new Date();
+        } finally {
+          lock.release();
         }
-        
-        lastCheckTime = new Date();
-      } finally {
-        lock.release();
-      }
+        await client.logout();
+      })();
+
+      await Promise.race([checkTask, timeoutPromise]);
       
-      await client.logout();
     } catch (err) {
-      console.error("❌ Erreur moniteur Gmail:", err);
+      console.error("❌ Erreur moniteur Gmail:", err.message);
       try { await client.logout(); } catch (e) {}
     }
   };
