@@ -1,6 +1,5 @@
 import { bot } from './bot/telegram.js';
 import http from 'http';
-import { startEmailMonitoring } from './agent/notifications.js';
 
 async function bootstrap() {
   try {
@@ -18,9 +17,6 @@ async function bootstrap() {
     // Gérer les arrêts propres (Ctrl+C, etc)
     process.once('SIGINT', () => bot.stop());
     process.once('SIGTERM', () => bot.stop());
-
-    // Activer la surveillance des emails en arrière-plan (sans bloquer le bot)
-    startEmailMonitoring(bot).catch(err => console.error("❌ Erreur au démarrage du moniteur:", err));
 
     await bot.start({
       onStart: (botInfo) => {
