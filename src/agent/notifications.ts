@@ -14,26 +14,26 @@ export async function startEmailMonitoring(bot: Bot) {
     return;
   }
 
-  const client = new ImapFlow({
-    host: 'imap.gmail.com',
-    port: 993,
-    secure: true,
-    auth: {
-      user: env.GMAIL_USER,
-      pass: env.GMAIL_APP_PASSWORD,
-    },
-    logger: false
-  });
-
   console.log(`📡 Démarrage du moniteur Gmail pour ${env.GMAIL_USER}...`);
 
   const pollEmails = async () => {
+    // Créer une nouvelle instance à CHAQUE poll pour éviter l'erreur "Can not re-use ImapFlow instance"
+    const client = new ImapFlow({
+      host: 'imap.gmail.com',
+      port: 993,
+      secure: true,
+      auth: {
+        user: env.GMAIL_USER,
+        pass: env.GMAIL_APP_PASSWORD,
+      },
+      logger: false
+    });
+
     try {
       await client.connect();
       const lock = await client.getMailboxLock('INBOX');
       
       try {
-        // Chercher les mails non lus depuis la dernière vérification
         const searchCriteria = { unseen: true, since: lastCheckTime };
         const messages = await client.search(searchCriteria);
         
@@ -43,21 +43,24 @@ export async function startEmailMonitoring(bot: Bot) {
           
           if (!parsed) continue;
 
-          console.log(`📩 Nouvel email de: ${parsed.from?.text} - Sujet: ${parsed.subject}`);
+          const fromText = parsed.from?.text || "Inconnu";
+          const subject = parsed.subject || "(Sans sujet)";
 
-          // Notifier tous les utilisateurs autorisés
+          console.log(`📩 Nouvel email de: ${fromText} - Sujet: ${subject}`);
+
           for (const userId of env.TELEGRAM_ALLOWED_USER_IDS) {
+            // Utiliser HTML pour éviter les erreurs de parsing Markdown avec les caractères spéciaux < >
             await bot.api.sendMessage(userId, 
-              `📩 **Nouvel Email Important**\n\n` +
-              `👤 **De :** ${parsed.from?.text}\n` +
-              `📝 **Sujet :** ${parsed.subject}\n\n` +
-              `🔗 _Consultez votre boîte Gmail pour répondre._`,
-              { parse_mode: 'Markdown' }
+              `📩 <b>Nouvel Email Important</b>\n\n` +
+              `👤 <b>De :</b> ${fromText.replace(/</g, '&lt;').replace(/>/g, '&gt;')}\n` +
+              `📝 <b>Sujet :</b> ${subject}\n\n` +
+              `🔗 <i>Consultez votre boîte Gmail pour répondre.</i>`,
+              { parse_mode: 'HTML' }
             );
           }
         }
         
-        lastCheckTime = new Date(); // Mettre à jour l'heure de dernière vérification
+        lastCheckTime = new Date();
       } finally {
         lock.release();
       }
@@ -69,9 +72,6 @@ export async function startEmailMonitoring(bot: Bot) {
     }
   };
 
-  // Lancer la première vérification
   pollEmails();
-
-  // Programmer une vérification toutes les 5 minutes
   setInterval(pollEmails, 5 * 60 * 1000);
 }
